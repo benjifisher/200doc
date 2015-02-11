@@ -1,0 +1,6 @@
+name = 200 days of code
+description = A simple theme for the 200 Days of Code site.
+base theme = bartik
+core = 7.x
+
+stylesheets[all][] = daysofcode.css

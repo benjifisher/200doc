@@ -1,0 +1,22 @@
+.front .region-content .block-views {
+  display: inline-block;
+  border: solid black 1px;
+  vertical-align: top;
+  min-width: 40%;
+  margin-left: 5%;
+}
+
+.front .region-content .block-views h2 {
+  text-align: center;
+}
+
+.front .region-content .block-views .views-row-odd {
+  padding-left: 10%;
+  margin-bottom: 1ex;
+}
+
+.front .region-content .block-views .views-row-even {
+  background-color: #EEEEEE;
+  padding-left: 10%;
+  margin-bottom: 1ex;
+}
