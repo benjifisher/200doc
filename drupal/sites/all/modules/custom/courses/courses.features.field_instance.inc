@@ -66,10 +66,10 @@ function courses_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
         'weight' => 1,
@@ -104,7 +104,7 @@ function courses_field_default_field_instances() {
     'description' => 'Enter the date on which this class will (or did) meet.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -114,7 +114,7 @@ function courses_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -163,11 +163,11 @@ function courses_field_default_field_instances() {
     'description' => 'If this class is part of an event on meetup.com, then enter the link here.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -212,21 +212,20 @@ function courses_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-class-field_speaker'
-  $field_instances['node-class-field_speaker'] = array(
+  // Exported field_instance: 'node-class-field_recording'
+  $field_instances['node-class-field_recording'] = array(
     'bundle' => 'class',
-    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select the speaker for this course. If you have not yet entered information for this speaker, Then save this page and go to <a href="/node/add/speaker">Content &gt; Add &gt; Speaker</a>.  Then return to this page and select the newly added speaker.',
+    'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
+        'label' => 'hidden',
+        'module' => 'file_entity',
         'settings' => array(
-          'link' => FALSE,
+          'file_view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 4,
+        'type' => 'file_rendered',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -236,6 +235,69 @@ function courses_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_recording',
+    'label' => 'Recording',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => 'media/class/recording',
+      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 0,
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 0,
+          'youtube' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-class-field_speaker'
+  $field_instances['node-class-field_speaker'] = array(
+    'bundle' => 'class',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select the speaker for this course. If you have not yet entered information for this speaker, Then save this page and go to <a href="/node/add/speaker">Content &gt; Add &gt; Speaker</a>.  Then return to this page and select the newly added speaker.',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_speaker',
     'label' => 'Speaker',
     'required' => 0,
@@ -259,13 +321,13 @@ function courses_field_default_field_instances() {
     'description' => 'If this meeting has a sponsor, then select it from the list.  If you have not yet entered information for the sponsor, then save your work so far, enter the sponsor information at <a href="/node/add/sponsor">Content &gt; Add &gt; Sponsor</a>, and return to this page.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -381,54 +443,6 @@ function courses_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-course-field_example_image'
-  $field_instances['node-course-field_example_image'] = array(
-    'bundle' => 'course',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_example_image',
-    'label' => 'Example image',
-    'required' => FALSE,
-    'settings' => array(
-      'description_field' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'txt',
-      'max_filesize' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
-        ),
-        'allowed_types' => array(
-          0 => 'image',
-        ),
-        'browser_plugins' => array(),
-      ),
-      'type' => 'media_generic',
-      'weight' => 3,
     ),
   );
 
@@ -704,7 +718,7 @@ function courses_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'large',
         ),
         'type' => 'image',
         'weight' => 2,
@@ -769,7 +783,6 @@ function courses_field_default_field_instances() {
   t('Body');
   t('Course');
   t('Enter the date on which this class will (or did) meet.');
-  t('Example image');
   t('Home page');
   t('If available, this image will be used instead of text when linking to the company\'s home page.');
   t('If this class is part of an event on meetup.com, then enter the link here.');
@@ -777,6 +790,7 @@ function courses_field_default_field_instances() {
   t('Logo');
   t('Meeting date');
   t('Meetup link');
+  t('Recording');
   t('Select the speaker for this course. If you have not yet entered information for this speaker, Then save this page and go to <a href="/node/add/speaker">Content &gt; Add &gt; Speaker</a>.  Then return to this page and select the newly added speaker.');
   t('Speaker');
   t('Sponsor');

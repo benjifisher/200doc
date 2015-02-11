@@ -46,7 +46,7 @@ function courses_views_default_views() {
   $handler->display->display_options['relationships']['field_speaker_target_id']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_target_id']['field'] = 'field_speaker_target_id';
   $handler->display->display_options['relationships']['field_speaker_target_id']['label'] = 'Speaker';
-  /* Field: Content: Date */
+  /* Field: Content: Meeting date */
   $handler->display->display_options['fields']['field_meeting_date']['id'] = 'field_meeting_date';
   $handler->display->display_options['fields']['field_meeting_date']['table'] = 'field_data_field_meeting_date';
   $handler->display->display_options['fields']['field_meeting_date']['field'] = 'field_meeting_date';
@@ -95,6 +95,7 @@ function courses_views_default_views() {
   $handler->display->display_options['fields']['field_home_page_1']['relationship'] = 'field_sponsor_target_id';
   $handler->display->display_options['fields']['field_home_page_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_home_page_1']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_home_page_1']['type'] = 'link_plain';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
   $handler->display->display_options['fields']['title_2']['table'] = 'node';
@@ -117,7 +118,7 @@ function courses_views_default_views() {
     'image_style' => 'medium',
     'image_link' => '',
   );
-  /* Sort criterion: Content: Date (field_meeting_date) */
+  /* Sort criterion: Content: Meeting date (field_meeting_date) */
   $handler->display->display_options['sorts']['field_meeting_date_value']['id'] = 'field_meeting_date_value';
   $handler->display->display_options['sorts']['field_meeting_date_value']['table'] = 'field_data_field_meeting_date';
   $handler->display->display_options['sorts']['field_meeting_date_value']['field'] = 'field_meeting_date_value';
