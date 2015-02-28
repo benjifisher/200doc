@@ -30,3 +30,7 @@
   padding-right: 5%;
   margin-bottom: 1ex;
 }
+
+.front .region-content .block-views .file-video .content {
+  margin: 0;
+}
