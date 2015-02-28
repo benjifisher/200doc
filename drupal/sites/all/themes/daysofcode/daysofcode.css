@@ -11,12 +11,14 @@
 }
 
 .front .region-content .block-views .views-row-odd {
-  padding-left: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   margin-bottom: 1ex;
 }
 
 .front .region-content .block-views .views-row-even {
   background-color: #EEEEEE;
-  padding-left: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   margin-bottom: 1ex;
 }
