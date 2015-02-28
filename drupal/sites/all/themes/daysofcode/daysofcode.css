@@ -1,3 +1,11 @@
+/* Inspired by Bootstrap */
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
 .front .region-content .block-views {
   display: inline-block;
   border: solid black 1px;
