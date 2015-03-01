@@ -10,8 +10,13 @@
   display: inline-block;
   border: solid black 1px;
   vertical-align: top;
-  min-width: 43%;
-  margin-left: 5%;
+  min-width: 30%;
+  margin-right: 3%;
+  box-sizing: border-box;
+}
+
+.front .region-content .block-views:last-child {
+  margin-right: 0%;
 }
 
 .front .region-content .block-views h2 {
