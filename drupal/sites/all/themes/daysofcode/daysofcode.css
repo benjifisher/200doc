@@ -10,7 +10,7 @@
   display: inline-block;
   border: solid black 1px;
   vertical-align: top;
-  min-width: 32%;
+  width: 32%;
   margin-right: 1%;
   box-sizing: border-box;
 }
