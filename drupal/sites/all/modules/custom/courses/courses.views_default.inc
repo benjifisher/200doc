@@ -30,6 +30,83 @@ function courses_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_recording' => 'field_recording',
+    'title' => 'title',
+    'field_meeting_time' => 'title',
+    'field_meetup_link' => 'field_meetup_link',
+    'field_home_page' => 'field_home_page',
+    'title_1' => 'title_1',
+    'field_home_page_1' => 'field_home_page_1',
+    'title_2' => 'title_2',
+    'field_logo' => 'field_logo',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_recording' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '<br>',
+      'empty_column' => 0,
+    ),
+    'field_meeting_time' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_meetup_link' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_home_page' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_home_page_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title_2' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_logo' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_course_target_id']['id'] = 'field_course_target_id';
   $handler->display->display_options['relationships']['field_course_target_id']['table'] = 'field_data_field_course';
@@ -46,23 +123,43 @@ function courses_views_default_views() {
   $handler->display->display_options['relationships']['field_speaker_target_id']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_target_id']['field'] = 'field_speaker_target_id';
   $handler->display->display_options['relationships']['field_speaker_target_id']['label'] = 'Speaker';
-  /* Field: Content: Meeting date */
-  $handler->display->display_options['fields']['field_meeting_date']['id'] = 'field_meeting_date';
-  $handler->display->display_options['fields']['field_meeting_date']['table'] = 'field_data_field_meeting_date';
-  $handler->display->display_options['fields']['field_meeting_date']['field'] = 'field_meeting_date';
-  $handler->display->display_options['fields']['field_meeting_date']['settings'] = array(
-    'format_type' => 'date',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
+  /* Field: Content: Recording */
+  $handler->display->display_options['fields']['field_recording']['id'] = 'field_recording';
+  $handler->display->display_options['fields']['field_recording']['table'] = 'field_data_field_recording';
+  $handler->display->display_options['fields']['field_recording']['field'] = 'field_recording';
+  $handler->display->display_options['fields']['field_recording']['label'] = '';
+  $handler->display->display_options['fields']['field_recording']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_recording']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_recording']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_recording']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_recording']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_recording']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_recording']['settings'] = array(
+    'file_view_mode' => 'preview',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Title and Date';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Meeting time */
+  $handler->display->display_options['fields']['field_meeting_time']['id'] = 'field_meeting_time';
+  $handler->display->display_options['fields']['field_meeting_time']['table'] = 'field_data_field_meeting_time';
+  $handler->display->display_options['fields']['field_meeting_time']['field'] = 'field_meeting_time';
+  $handler->display->display_options['fields']['field_meeting_time']['label'] = '';
+  $handler->display->display_options['fields']['field_meeting_time']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_meeting_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_meeting_time']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_meeting_time']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_meeting_time']['settings'] = array(
+    'format_type' => 'date_and_time',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: Meetup link */
   $handler->display->display_options['fields']['field_meetup_link']['id'] = 'field_meetup_link';
   $handler->display->display_options['fields']['field_meetup_link']['table'] = 'field_data_field_meetup_link';
@@ -118,10 +215,6 @@ function courses_views_default_views() {
     'image_style' => 'medium',
     'image_link' => '',
   );
-  /* Sort criterion: Content: Meeting date (field_meeting_date) */
-  $handler->display->display_options['sorts']['field_meeting_date_value']['id'] = 'field_meeting_date_value';
-  $handler->display->display_options['sorts']['field_meeting_date_value']['table'] = 'field_data_field_meeting_date';
-  $handler->display->display_options['sorts']['field_meeting_date_value']['field'] = 'field_meeting_date_value';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';

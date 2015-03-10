@@ -50,7 +50,7 @@ function courses_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
@@ -93,18 +93,18 @@ function courses_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-class-field_meeting_date'
-  $field_instances['node-class-field_meeting_date'] = array(
+  // Exported field_instance: 'node-class-field_meeting_time'
+  $field_instances['node-class-field_meeting_time'] = array(
     'bundle' => 'class',
     'deleted' => 0,
-    'description' => 'Enter the date on which this class will (or did) meet.',
+    'description' => 'Enter the date and times for the meetup, normally 6:00 PM to 9:00 PM.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -114,7 +114,7 @@ function courses_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 3,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -124,11 +124,12 @@ function courses_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_meeting_date',
-    'label' => 'Meeting date',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_meeting_time',
+    'label' => 'Meeting time',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -143,10 +144,10 @@ function courses_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-1:+1',
       ),
       'type' => 'date_text',
-      'weight' => -2,
+      'weight' => 4,
     ),
   );
 
@@ -208,7 +209,7 @@ function courses_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => -1,
+      'weight' => 5,
     ),
   );
 
@@ -269,7 +270,7 @@ function courses_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 31,
+      'weight' => 9,
     ),
   );
 
@@ -309,7 +310,7 @@ function courses_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => 6,
     ),
   );
 
@@ -348,7 +349,7 @@ function courses_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 7,
     ),
   );
 
@@ -782,13 +783,13 @@ function courses_field_default_field_instances() {
   t('Blurb');
   t('Body');
   t('Course');
-  t('Enter the date on which this class will (or did) meet.');
+  t('Enter the date and times for the meetup, normally 6:00 PM to 9:00 PM.');
   t('Home page');
   t('If available, this image will be used instead of text when linking to the company\'s home page.');
   t('If this class is part of an event on meetup.com, then enter the link here.');
   t('If this meeting has a sponsor, then select it from the list.  If you have not yet entered information for the sponsor, then save your work so far, enter the sponsor information at <a href="/node/add/sponsor">Content &gt; Add &gt; Sponsor</a>, and return to this page.');
   t('Logo');
-  t('Meeting date');
+  t('Meeting time');
   t('Meetup link');
   t('Recording');
   t('Select the speaker for this course. If you have not yet entered information for this speaker, Then save this page and go to <a href="/node/add/speaker">Content &gt; Add &gt; Speaker</a>.  Then return to this page and select the newly added speaker.');
